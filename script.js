@@ -8,8 +8,11 @@ $(document).ready(function(){
         data.push(i);
         circle.data(data).enter().append('circle')
             .attr("cy", 60)
+            .attr("r",0)
+            .attr("cx", function(d){return d})
+            .transition()
             .attr("r",10)
-            .attr("cx", function(d){return d});
+            .duration(2000);
         event.preventDefault();
     })
 });
